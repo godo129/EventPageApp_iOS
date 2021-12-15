@@ -6,7 +6,7 @@ target 'EventPageApp' do
   use_frameworks!
 
 pod 'Alamofire'
-
+pod 'SwiftyJSON'
   # Pods for EventPageApp
 
 end
