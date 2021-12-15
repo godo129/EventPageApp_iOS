@@ -13,7 +13,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         let EventImage = UIImageView()
         EventImage.backgroundColor = .white
         EventImage.clipsToBounds = true
-        EventImage.contentMode = .scaleAspectFill
+        EventImage.contentMode = .scaleToFill
         return EventImage
     }()
     
