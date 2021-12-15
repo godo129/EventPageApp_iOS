@@ -57,9 +57,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedShoppingMall = ShoppingMallList[indexPath.row]
         let vc = storyboard?.instantiateViewController(identifier: "EventView")
         vc?.modalTransitionStyle = .flipHorizontal
         self.present(vc!, animated: true, completion: nil)
+        
     }
     
 }
