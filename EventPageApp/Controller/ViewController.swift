@@ -10,7 +10,9 @@ import Kingfisher
 
 class ViewController: UIViewController {
     
-    let url = "https://gg6hx0.deta.dev/"
+    var eventData: EventModel!
+
+    private var collectionView: UICollectionView!
     
     var eventManger = EventManger()
     
@@ -19,8 +21,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(imageView)
-        imageView.frame = CGRect(x: 50, y: 50, width: 300, height: 300)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: view.frame.size.width, height: view.frame.size.width/2-2+100)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.frame = view.bounds
+        
+        collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        
         
         view.backgroundColor = .white
         
@@ -34,18 +48,38 @@ class ViewController: UIViewController {
 
 }
 
+//MARK : - EventManagerDelegate
 extension ViewController: EventManagerDelegate {
  
     func didUpdateEventData(_ eventManger: EventManger, event: EventModel) {
         print("업데이트 완료 ")
         DispatchQueue.main.async {
             self.imageView.kf.setImage(with: URL(string: event.imageURL[0]))
+            self.eventData = event
+            
+            self.view.addSubview(self.collectionView)
+            
         }
     }
     
     func didFailUpdateEventData(error: Error) {
         print(error)
     }
+    
+}
+
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return eventData.imageURL.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EventCollectionViewCell
+        
+        cell.EventImage.kf.setImage(with: URL(string: eventData.imageURL[indexPath.row]))
+        return cell
+    }
+    
     
 }
 
