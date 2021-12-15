@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
     
     let url = "https://gg6hx0.deta.dev/"
     
-    let eventManger = EventManger()
+    var eventManger = EventManger()
     
     let imageView = UIImageView()
 
@@ -24,8 +25,20 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         eventManger.getEventData(shoppingMal: "알라딘")
+        
+        eventManger.delegate = self
     }
 
 
+}
+
+extension ViewController: EventManagerDelegate {
+    func didUpdateEventData(_ eventManger: EventManger, event: EventModel) {
+        print("업데이트 완료 ")
+        DispatchQueue.main.async {
+            self.imageView.kf.setImage(with: URL(string: event.imageURL[0]))
+        }
+    }
+    
 }
 

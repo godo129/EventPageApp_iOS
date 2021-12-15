@@ -7,6 +7,7 @@ target 'EventPageApp' do
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Kingfisher'
   # Pods for EventPageApp
 
 end
