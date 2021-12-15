@@ -17,6 +17,9 @@
 		F10D7EAF276A438E00C44723 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EAE276A438E00C44723 /* EventManager.swift */; };
 		F10D7EB5276A511600C44723 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EB4276A511600C44723 /* EventData.swift */; };
 		F10D7EB7276A512100C44723 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EB6276A512100C44723 /* EventModel.swift */; };
+		F10D7EB9276A61B100C44723 /* ShoppingMallTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EB8276A61B100C44723 /* ShoppingMallTableViewCell.swift */; };
+		F10D7EBB276A648900C44723 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EBA276A648800C44723 /* HomeViewController.swift */; };
+		F10D7EBD276A6FA700C44723 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10D7EBC276A6FA700C44723 /* EventCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		F10D7EAE276A438E00C44723 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		F10D7EB4276A511600C44723 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		F10D7EB6276A512100C44723 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		F10D7EB8276A61B100C44723 /* ShoppingMallTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingMallTableViewCell.swift; sourceTree = "<group>"; };
+		F10D7EBA276A648800C44723 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F10D7EBC276A6FA700C44723 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 				F10D7EA0276A429000C44723 /* Assets.xcassets */,
 				F10D7EA2276A429000C44723 /* LaunchScreen.storyboard */,
 				F10D7EA5276A429000C44723 /* Info.plist */,
+				F10D7EB8276A61B100C44723 /* ShoppingMallTableViewCell.swift */,
+				F10D7EBC276A6FA700C44723 /* EventCollectionViewCell.swift */,
 			);
 			path = EventPageApp;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				F10D7E9B276A428F00C44723 /* ViewController.swift */,
+				F10D7EBA276A648800C44723 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +249,9 @@
 			files = (
 				F10D7E9C276A428F00C44723 /* ViewController.swift in Sources */,
 				F10D7E98276A428F00C44723 /* AppDelegate.swift in Sources */,
+				F10D7EB9276A61B100C44723 /* ShoppingMallTableViewCell.swift in Sources */,
+				F10D7EBB276A648900C44723 /* HomeViewController.swift in Sources */,
+				F10D7EBD276A6FA700C44723 /* EventCollectionViewCell.swift in Sources */,
 				F10D7EB5276A511600C44723 /* EventData.swift in Sources */,
 				F10D7EAF276A438E00C44723 /* EventManager.swift in Sources */,
 				F10D7EB7276A512100C44723 /* EventModel.swift in Sources */,
