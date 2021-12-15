@@ -12,4 +12,3 @@ let ShoppingMallList = ["교보문고",
                         "알라딘",
                         "영풍문고"]
 
-var eventData: [EventModel] = []
