@@ -11,6 +11,7 @@ import SwiftyJSON
 
 protocol EventManagerDelegate {
     func didUpdateEventData(_ eventManger: EventManger, event: EventModel)
+    func didFailUpdateEventData(error: Error)
 }
 
 
@@ -28,11 +29,13 @@ struct EventManger {
             case .success(let value):
                 let eventJSON: JSON = JSON(value)
                 if let event = updateEventData(json: eventJSON, ShoppingMall: shoppingMal) {
-                    print(event)
                     self.delegate?.didUpdateEventData(self,event: event)
+                 
                 }
             case let .failure(error):
-                print(error)
+                
+                self.delegate?.didFailUpdateEventData(error: error)
+
             }
         }
     }
@@ -41,6 +44,7 @@ struct EventManger {
     func updateEventData(json:JSON,ShoppingMall: String) -> EventModel? {
         
         guard let list = json[ShoppingMall].dictionary else {return nil}
+        
   
         guard let imageURL = list["image_url"]?.array else {return nil}
         
