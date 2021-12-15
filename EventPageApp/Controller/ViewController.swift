@@ -22,22 +22,29 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
         imageView.frame = CGRect(x: 50, y: 50, width: 300, height: 300)
         
+        view.backgroundColor = .white
         
         // Do any additional setup after loading the view.
+        eventManger.delegate = self
         eventManger.getEventData(shoppingMal: "알라딘")
         
-        eventManger.delegate = self
+        
     }
 
 
 }
 
 extension ViewController: EventManagerDelegate {
+ 
     func didUpdateEventData(_ eventManger: EventManger, event: EventModel) {
         print("업데이트 완료 ")
         DispatchQueue.main.async {
             self.imageView.kf.setImage(with: URL(string: event.imageURL[0]))
         }
+    }
+    
+    func didFailUpdateEventData(error: Error) {
+        print(error)
     }
     
 }
