@@ -7,9 +7,8 @@
 
 import Foundation
 
-
-struct EventModel  {
-    let shoppingMallName: String
-    let imageURL: [String]
+struct EventModel {
+    let ShopMallName : String
+    let imageURL : [String]
     let detailURL: [String]
 }

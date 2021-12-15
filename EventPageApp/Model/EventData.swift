@@ -7,16 +7,9 @@
 
 import Foundation
 
-struct EventData: Codable {
-    let name : String
-    let imageURL : [ImageURL]
-    let detailURL : [DetailURL]
-}
+let ShoppingMallList = ["교보문고",
+                        "인터파크",
+                        "알라딘",
+                        "영풍문고"]
 
-struct ImageURL: Codable {
-    let url: String
-}
-
-struct DetailURL: Codable {
-    let url: String
-}
+var eventData: [EventModel] = []
