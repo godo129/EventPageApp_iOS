@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import WebKit
 
 class ViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class ViewController: UIViewController {
     
     var eventManger = EventManger()
     
-    let imageView = UIImageView()
+    var eventWeb = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,11 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         eventManger.delegate = self
-        eventManger.getEventData(shoppingMal: "알라딘")
+        eventManger.getEventData(shoppingMall: selectedShoppingMall)
+        
+        
+
+        
         
         
     }
@@ -52,9 +57,8 @@ class ViewController: UIViewController {
 extension ViewController: EventManagerDelegate {
  
     func didUpdateEventData(_ eventManger: EventManger, event: EventModel) {
-        print("업데이트 완료 ")
+
         DispatchQueue.main.async {
-            self.imageView.kf.setImage(with: URL(string: event.imageURL[0]))
             self.eventData = event
             
             self.view.addSubview(self.collectionView)
@@ -78,6 +82,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         cell.EventImage.kf.setImage(with: URL(string: eventData.imageURL[indexPath.row]))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.eventWeb.load(URLRequest(url: URL(string: eventData.detailURL[indexPath.row])!))
+        eventWeb.frame = CGRect(x: 0, y: 40, width: view.frame.size.width, height: view.frame.size.height)
+        view.addSubview(eventWeb)
     }
     
     
