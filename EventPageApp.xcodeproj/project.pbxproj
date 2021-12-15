@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				AA85BDBECE2F47F1312C06D2 /* Pods-EventPageApp.debug.xcconfig */,
 				C2C31C674C88C7399E287837 /* Pods-EventPageApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,13 +82,37 @@
 			children = (
 				F10D7E97276A428F00C44723 /* AppDelegate.swift */,
 				F10D7E99276A428F00C44723 /* SceneDelegate.swift */,
-				F10D7E9B276A428F00C44723 /* ViewController.swift */,
-				F10D7E9D276A428F00C44723 /* Main.storyboard */,
+				F10D7EAD276A432D00C44723 /* Model */,
+				F10D7EAC276A432400C44723 /* Controller */,
+				F10D7EAB276A431D00C44723 /* View */,
 				F10D7EA0276A429000C44723 /* Assets.xcassets */,
 				F10D7EA2276A429000C44723 /* LaunchScreen.storyboard */,
 				F10D7EA5276A429000C44723 /* Info.plist */,
 			);
 			path = EventPageApp;
+			sourceTree = "<group>";
+		};
+		F10D7EAB276A431D00C44723 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F10D7E9D276A428F00C44723 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F10D7EAC276A432400C44723 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F10D7E9B276A428F00C44723 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F10D7EAD276A432D00C44723 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
